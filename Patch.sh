@@ -1,11 +1,3 @@
-#IMPORTANT!!!
-#THIS SCRIPT IS FOR API21+ arm64 devices. If you want to do for device with other API or architecture,
-#you may read this article [How to install SuperSu on Android via adb](http://selvaline.blogspot.tw/2015/09/how-to-install-supersu-on-android-via.html)
-
-adb root
-adb remount
-
-
 adb push common/Superuser.apk /system/app/SuperSU/SuperSU.apk
 adb shell chmod 0644 /system/app/SuperSU/SuperSU.apk
 adb shell chcon u:object_r:system_file:s0 /system/app/SuperSU/SuperSU.apk
@@ -59,4 +51,3 @@ adb shell ln -s /system/xbin/daemonsu /system/bin/app_process64
 
 adb shell "echo 1 > /system/etc/.installed_su_daemon"
 adb shell /system/xbin/su --install
-
