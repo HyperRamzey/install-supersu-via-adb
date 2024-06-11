@@ -3,10 +3,6 @@ adb remount
 Echo Mounting system...
 adb shell setenforce 0
 
-adb shell mount -o rw,remount,rw /
-adb shell mount -o rw,remount,rw /system
-adb shell mount -o rw,remount,exec,rw /storage/emulated
-
 adb push common/Superuser.apk /system/app/SuperSU/SuperSU.apk
 adb shell chmod 0644 /system/app/SuperSU/SuperSU.apk
 adb shell chcon u:object_r:system_file:s0 /system/app/SuperSU/SuperSU.apk
